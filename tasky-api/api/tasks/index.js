@@ -18,7 +18,8 @@ router.get('/:id', (req, res) => {
  }); 
 
  //Add a task
-router.post('/', (req, res) => {
+router.post('/', (req, res) => { 
+     console.log(req.body);
      const { title, description, deadline, priority, done } = req.body;
      const newTask = {
          id: uuidv4(),
