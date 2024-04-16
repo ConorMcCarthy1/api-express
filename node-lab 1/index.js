@@ -1,4 +1,5 @@
-// Load the http module to create an http server.
+// Load the http module to create an http server. 
+import './db';
 import http from 'http';
 import dotenv from 'dotenv';
 import greeting from './greeting.js';
