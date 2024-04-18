@@ -1,8 +1,10 @@
+import cors from 'cors'; 
 import dotenv from 'dotenv';
 import express from 'express';
 import tasksRouter from './api/tasks';  
 import usersRouter from './api/users';
-import './db';
+import './db'; 
+
 
 dotenv.config();
 
@@ -20,8 +22,9 @@ const errHandler = (err, req, res, next) => {
    };
 app.use(express.json());
 app.use('/api/tasks', tasksRouter); 
-app.use('/api/users', usersRouter); 
-app.use(errHandler);
+app.use('/api/users', usersRouter);  
+app.use(errHandler); 
+app.use(cors());
 
 app.listen(port, () => {
   console.info(`Server running at ${port}`);
