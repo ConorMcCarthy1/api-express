@@ -2,7 +2,8 @@
 import './db';
 import http from 'http';
 import dotenv from 'dotenv';
-import greeting from './greeting.js';
+import greeting from './greeting.js'; 
+
 
 dotenv.config();
 const port = process.env.PORT;
