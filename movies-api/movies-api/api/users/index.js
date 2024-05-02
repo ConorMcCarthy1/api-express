@@ -1,8 +1,9 @@
 import express from 'express';
 import User from './userModel';
-import asyncHandler from 'express-async-handler';
+import asyncHandler from 'express-async-handler'; 
+import jwt from 'jsonwebtoken';
 
-const router = express.Router(); // eslint-disable-line
+const router = express.Router(); // eslint-disable-line 
 
 // Get all users
 router.get('/', async (req, res) => {
@@ -65,5 +66,5 @@ async function authenticateUser(req, res) {
         res.status(401).json({ success: false, msg: 'Wrong password.' });
     }
 }
-
+ 
 export default router;
