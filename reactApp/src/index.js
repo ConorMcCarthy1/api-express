@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes, Navigate, Link } from "react-router-dom";
 import PublicPage from "./pages/publicPage";
 import ProfilePage from "./pages/profilePage";
 import MoviesPage from "./pages/moviesPage"; 
-import SeriesPage from "./pages/seriesPage"; 
+import SeriesPage from "./pages/seriesPage";  
 import PeoplePage from "./pages/celebPage";
 import { QueryClientProvider, QueryClient } from "react-query";
 import LoginPage from "./pages/loginPage";
@@ -38,8 +38,8 @@ const App = () => {
             <li>
               <Link to="/series">TV Shows</Link>
             </li> 
-            <li>
-              <Link to="/celebs">People</Link>
+            <li> 
+            <Link to="/celebs">People</Link>
             </li>
             <li>
               <Link to="/profile">Profile</Link>
@@ -52,7 +52,7 @@ const App = () => {
             <Route element={<ProtectedRoutes />}>
               <Route path="/movies" element={<MoviesPage />} /> 
               <Route path="/series" element={<SeriesPage />} /> 
-              <Route path="/celebs" element={<PeoplePage />} />
+              <Route path="/celebs" element={<PeoplePage />}/>
               <Route path="/profile" element={<ProfilePage />} />
             </Route>
             <Route path="*" element={<Navigate to="/" />} />

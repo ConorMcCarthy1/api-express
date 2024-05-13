@@ -37,7 +37,7 @@ export const PublicPage = () => {
     const shows = data.results;
     const seriesDisplay = (
       <div>
-          {shows.map(series => { return <>{series.id},{series.title}<br /></> })}
+          {shows && shows.map(series => { return <>{series.id},{series.name}<br /></> })}
       </div>
   )
      return <div><h2>Series</h2>{seriesDisplay}</div>
@@ -55,7 +55,7 @@ export const People = () => {
     const people = data.results;
     const celebsDisplay = (
       <div>
-          {people?.map(credit => { return <>{credit.person_id},{credit.fname} {credit.lname}<br /></> })}
+          {people && people.map(credit => { return <>{credit.person_id},{credit.fname} {credit.lname}<br /></> })}
       </div>
   )
      return <div><h2>Celebrities</h2>{celebsDisplay}</div>

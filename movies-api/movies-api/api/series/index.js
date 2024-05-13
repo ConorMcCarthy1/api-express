@@ -5,7 +5,7 @@ import express from 'express';
 const router = express.Router(); 
 
 
-router.get('/series', asyncHandler(async (req, res) => {
+router.get('/tv', asyncHandler(async (req, res) => {
     const shows = await seriesModel.find();
     res.status(200).json(shows);
 }));

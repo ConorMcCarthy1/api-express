@@ -12,21 +12,22 @@ export const getMovies = async () => {
 export const getSeries = async () => {
   const response = await fetch(
     'https://localhost:8080/api/series', {
-    headers: {
-      'Authorization': window.localStorage.getItem('token')
+      headers: {
+        'Authorization': window.localStorage.getItem('token')
+      } 
     }
-  }
   )
   return response.json();
 }; 
 
-export const getCelebs = async () => {
+export const getCelebs = async (fname, lname) => {
   const response = await fetch(
-    'https://api.themoviedb.org/3/person/popular?language=en-US&page=1', {
-    headers: {
-      'Authorization': window.localStorage.getItem('token')
-    }
-  }
+    'https://api.themoviedb.org/3/person/popular?api_key=58be30229db69dba9098c313200fdaee&language=en-US&page=1' 
+    , {
+      headers: {
+        'Authorization': window.localStorage.getItem('token')
+      }  
+    } 
   )
   return response.json();
 };
