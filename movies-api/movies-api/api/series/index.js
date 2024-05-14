@@ -5,7 +5,7 @@ import express from 'express';
 const router = express.Router(); 
 
 
-router.get('/tv', asyncHandler(async (req, res) => {
+router.get('/series', asyncHandler(async (req, res) => {
     const shows = await seriesModel.find();
     res.status(200).json(shows);
 }));
@@ -13,7 +13,7 @@ router.get('/tv', asyncHandler(async (req, res) => {
 // Get series details. yes copy paste and rewriting code.
 router.get('/:series_id', asyncHandler(async (req, res) => {
     const id = parseInt(req.params.series_id);
-    const shows = await seriesModel.findByShowDBId(series_id);
+    const shows = await seriesModel.findBySeriesDBId(series_id);
     if (shows) {
         res.status(200).json(shows);
     } else {

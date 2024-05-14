@@ -34,16 +34,16 @@ export const PublicPage = () => {
     if (isError) {
       return <h1>{error.message}</h1>
     }  
-    const shows = data.results;
+    const shows = data;
     const seriesDisplay = (
       <div>
-          {shows && shows.map(series => { return <>{series.id},{series.name}<br /></> })}
+          {shows.map(series => { return <>{series.series_id},{series.name}<br /></> })}
       </div>
   )
      return <div><h2>Series</h2>{seriesDisplay}</div>
 }  
 
-export const People = () => {
+export const Celebs = () => {
   const {  data, error, isLoading, isError }  = useQuery('celebs', getCelebs)
   if (isLoading) {
       return <h1>Loading...</h1>
@@ -55,7 +55,7 @@ export const People = () => {
     const people = data.results;
     const celebsDisplay = (
       <div>
-          {people && people.map(credit => { return <>{credit.person_id},{credit.fname} {credit.lname}<br /></> })}
+          {people.map(credit => { return <>{credit.id}, {credit.name}<br /></> })}
       </div>
   )
      return <div><h2>Celebrities</h2>{celebsDisplay}</div>

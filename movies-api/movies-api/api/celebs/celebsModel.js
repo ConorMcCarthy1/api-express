@@ -24,8 +24,8 @@ const CelebsSchema = new Schema({
   tagline: { type: String }
 });
 
-SeriesSchema.statics.findByCelebDBId = function (person_id) {
-  return this.findOne({ id: person_id });
+CelebsSchema.statics.findByCelebDBId = function (id) {
+  return this.findOne({ id: id });
 };
 
 export default mongoose.model('Celebs', CelebsSchema);

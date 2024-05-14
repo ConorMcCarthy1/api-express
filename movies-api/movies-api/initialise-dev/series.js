@@ -1,18 +1,18 @@
-const  series = [
+const series = [
      {
-         "series_id":2050093, 
-         "name":"Roots" 
+         "id":2050093, 
+        "name":"The Wire" 
      },
      {
-          "series_id":593318, 
+          "id":593318, 
           "name":"Baby Reindeer"
       }, 
       {
-          "series_id":8444000, 
+          "id":8444000, 
           "name":"Neon Genesis Evangelion"
       },
       {
-          "series_id":22294311, 
+          "id":22294311, 
           "name":"Breaking Bad"
       },
  ];

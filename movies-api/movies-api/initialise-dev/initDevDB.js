@@ -21,13 +21,13 @@ async function main() {
     await Series.collection.drop().catch(err => console.log('Series collection not found'))
     await User.create(users);
     await Movie.create(movies); 
-    await Celeb.create(people); 
-    await Series.create(shows);
+   // await Celeb.create(people); 
+  // await Series.create(shows);
     console.log('Database initialised');
     console.log(`${users.length} users loaded`);
     console.log(`${movies.length} movies loaded`); 
-    console.log(`${people.length} celebrities loaded`); 
-    console.log(`${shows.length} series loaded`);
+   // console.log(`${people.length} celebrities loaded`); 
+    //console.log(`${shows.length} series loaded`);
     await mongoose.disconnect();
 }
 

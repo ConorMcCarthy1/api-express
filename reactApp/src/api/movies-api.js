@@ -11,7 +11,7 @@ export const getMovies = async () => {
 
 export const getSeries = async () => {
   const response = await fetch(
-    'https://localhost:8080/api/series', {
+    'http://localhost:8080/api/series' , {
       headers: {
         'Authorization': window.localStorage.getItem('token')
       } 
