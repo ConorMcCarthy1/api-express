@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query';
-import { getMovies, getSeries, getCelebs } from "./api/movies-api"; 
+import { getMovies, getSeries, getCelebs, getRecommendations, getTopRated } from "./api/movies-api"; 
 
 
 export const PublicPage = () => {
@@ -34,10 +34,10 @@ export const PublicPage = () => {
     if (isError) {
       return <h1>{error.message}</h1>
     }  
-    const shows = data;
+    const series = data;
     const seriesDisplay = (
       <div>
-          {shows.map(series => { return <>{series.series_id},{series.name}<br /></> })}
+          {series.map(series => { return <>{series.id}, {series.title}<br /></> })}
       </div>
   )
      return <div><h2>Series</h2>{seriesDisplay}</div>
@@ -61,8 +61,24 @@ export const Celebs = () => {
      return <div><h2>Celebrities</h2>{celebsDisplay}</div>
 } 
 
- export const Profile = () => {
-    return <h2>My Profile </h2>
+ export const Profile = () => { 
+  const {  data, error, isLoading, isError }  = useQuery('topRated', getTopRated)
+  if (isLoading) {
+      return <h1>Loading...</h1>
+    }
+  
+    if (isError) {
+      return <h1>{error.message}</h1>
+    }  
+    const recommendations = data.results;
+    const recommendationsDisplay = (
+      <div>
+          {recommendations.map(recommendation => { return <>{recommendation.movie_id}, {recommendation.title}<br /></> })}
+      </div>
+  )
+    return <div><h2>My Profile:</h2> <h3>Here you can be unique, just like everybody else is.</h3> 
+    <br /> 
+    <h2>Recommendations for you(and only you.)</h2>{recommendationsDisplay}</div>
 
 }
  export const HomePage = () => {

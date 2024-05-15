@@ -10,11 +10,11 @@ const SeriesPage = () => {
     if (isError) {
         return <h1>{error.message}</h1>
     }
-    const shows = data.results; 
+    const series = data.results; 
 
     const seriesDisplay = (
         <div>
-            {shows && shows.map(series => { return <li key={series.series_id}>{series.series_id}, {series.name}<br /></li> })}
+            {series && series.map(series => { return <li key={series.id}>{series.id}, {series.title}<br /></li> })}
         </div>
     )
     return <div><h2>TV Shows</h2>{seriesDisplay}</div>

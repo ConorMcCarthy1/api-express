@@ -6,16 +6,16 @@ const router = express.Router();
 
 
 router.get('/series', asyncHandler(async (req, res) => {
-    const shows = await seriesModel.find();
-    res.status(200).json(shows);
+    const series = await seriesModel.find();
+    res.status(200).json(series);
 }));
 
 // Get series details. yes copy paste and rewriting code.
 router.get('/:series_id', asyncHandler(async (req, res) => {
     const id = parseInt(req.params.series_id);
-    const shows = await seriesModel.findBySeriesDBId(series_id);
-    if (shows) {
-        res.status(200).json(shows);
+    const series = await seriesModel.findBySeriesDBId(id);
+    if (series) {
+        res.status(200).json(series);
     } else {
         res.status(404).json({message: 'The series you requested could not be found.', status_code: 404});
     }

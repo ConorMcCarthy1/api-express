@@ -14,6 +14,6 @@ const series = [
       {
           "id":22294311, 
           "name":"Breaking Bad"
-      },
+      }
  ];
  export default series;

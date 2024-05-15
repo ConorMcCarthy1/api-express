@@ -19,13 +19,15 @@ const LoginPage = props => {
     const { from } = location.state ? { from: location.state.from.pathname } : { from: "/" };
 
     if (context.isAuthenticated === true) {
-        return <Navigate to={from} />;
+        return <Navigate to={"/movies"} />;
     }
 
     return (
         <>
             <h2>Login page</h2>
-            <p>You must log in to view the protected pages </p>
+            <p>You must log in to view the protected pages 
+                <br />
+                Speak friend, and enter... </p>
             <input id="username" placeholder="user name" onChange={e => {
                 setUserName(e.target.value);
             }}></input><br />

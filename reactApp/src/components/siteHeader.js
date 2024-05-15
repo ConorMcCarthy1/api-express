@@ -8,12 +8,12 @@ const Header = (props) => {
 
   return context.isAuthenticated ? (
     <p>
-      Welcome {context.userName}! <button onClick={() => context.signout()}>Sign out</button>
+      Welcome {context.userName}! Enjoy your stay at the Movies App <button onClick={() => context.signout()}>Sign out</button>
     </p>
   ) : (
     <p>
-      You are not logged in{" "}
-      <button onClick={() => navigate('/login')}>Login</button>
+      What's in the box?{" "}
+      <button onClick={() => navigate('/login')}>Open</button>
     </p>
   );
 };

@@ -34,14 +34,14 @@ export const getGenres = async () => {
 
   export const getSeries = async () => {
     const response = await fetch(
-      'https://api.themoviedb.org/3/tv/series_id?58be30229db69dba9098c313200fdaee?language=en-US&page=1'
+      'https://api.themoviedb.org/3/tv/series_id?api_key=58be30229db69dba9098c313200fdaee&language=en-US&page=1'
     )
     return response.json();
   }; 
   
   export const getCelebs = async () => {
     const response = await fetch(
-      'https://api.themoviedb.org/3/person/popular?58be30229db69dba9098c313200fdaee?language=en-US&page=1' 
+      'https://api.themoviedb.org/3/person/popular?api_key=58be30229db69dba9098c313200fdaee&language=en-US&page=1' 
     )
     return response.json();
   };
