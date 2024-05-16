@@ -2,16 +2,16 @@ import seriesModel from './seriesModel';
 import asyncHandler from 'express-async-handler';
 import express from 'express';
 
-const router = express.Router(); 
+const seriesRouter = express.Router(); 
 
 
-router.get('/series', asyncHandler(async (req, res) => {
+seriesRouter.get('/series', asyncHandler(async (req, res) => {
     const series = await seriesModel.find();
     res.status(200).json(series);
 }));
 
 // Get series details. yes copy paste and rewriting code.
-router.get('/:series_id', asyncHandler(async (req, res) => {
+seriesRouter.get('/:series_id', asyncHandler(async (req, res) => {
     const id = parseInt(req.params.series_id);
     const series = await seriesModel.findBySeriesDBId(id);
     if (series) {
@@ -22,4 +22,4 @@ router.get('/:series_id', asyncHandler(async (req, res) => {
 })); 
 
 
-export default router;
+export default seriesRouter;

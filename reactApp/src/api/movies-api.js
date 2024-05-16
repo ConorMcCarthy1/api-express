@@ -22,7 +22,7 @@ export const getRecommendations = async (movie_id) => {
 
 export const getSeries = async () => {
   const response = await fetch(
-   'https://api.themoviedb.org/3/tv/series_id?api_key=58be30229db69dba9098c313200fdaee&language=en-US&page=1' 
+   'https://api.themoviedb.org/3/discover/tv?api_key=58be30229db69dba9098c313200fdaee&include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc' 
     , {
     headers: {
       'Authorization': window.localStorage.getItem('token')

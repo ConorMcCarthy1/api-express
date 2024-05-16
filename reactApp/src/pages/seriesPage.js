@@ -14,7 +14,7 @@ const SeriesPage = () => {
 
     const seriesDisplay = (
         <div>
-            {series && series.map(series => { return <li key={series.id}>{series.id}, {series.title}<br /></li> })}
+            {series && series.map(series => { return <li key={series.id}>{series.id}, {series.name}<br /></li> })}
         </div>
     )
     return <div><h2>TV Shows</h2>{seriesDisplay}</div>

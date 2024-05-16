@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 // register(Create)/Authenticate User
 router.post('/', asyncHandler(async (req, res) => {
     try {
-        if (!req.body.username || !req.body.password) {
+        if (!req.body.username ||  !req.body.password) {
             return res.status(400).json({ success: false, msg: 'Username and password are required.' });
         }
         if (req.query.action === 'register') {

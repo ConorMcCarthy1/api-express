@@ -4,7 +4,7 @@ import { AuthContext } from '../contexts/authContext';
 
 const SignUpPage = props => {
   const context = useContext(AuthContext)
-  const [userName, setUserName] = useState("");
+  const [userName, setUserName] = useState(""); 
   const [password, setPassword] = useState("");
   const [passwordAgain, setPasswordAgain] = useState("");
   const [registered, setRegistered] = useState(false);
@@ -27,6 +27,7 @@ const SignUpPage = props => {
     <>
       <h2>SignUp page</h2>
       <p>You must register a username and password to log in </p>
+      <input placeholder="Email (case sensitive)"></input><br />
       <input value={userName} placeholder="user name" onChange={e => {
         setUserName(e.target.value);
       }}></input><br />
